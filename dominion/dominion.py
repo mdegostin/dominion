@@ -7,6 +7,7 @@ defines the overall high level game logic.
 
 """
 
+import os
 import sys
 from random import shuffle
 from copy import copy
@@ -26,6 +27,8 @@ class Config():
         """Sets up the game configuration for a new game.
 
         """
+
+        os.system('cls' if os.name == 'nt' else 'clear')
 
         # Print a nice welcome message.
         print("*" * 50)
@@ -148,6 +151,8 @@ class Game():
         
         """
 
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         # Print the beginning game message.
         print("\nBeginning " + str(self))
 
@@ -176,6 +181,7 @@ class Game():
                 try:
                     print(f"\n********** Turn #{turn} **********")
                     player.turn(self.config)
+                    os.system('cls' if os.name == 'nt' else 'clear')
                 
                 # Here we catch unexpected errors while playing the game.
                 except DominionError as e:
