@@ -411,7 +411,7 @@ class Cellar(Action):
         num_discards = 0
         while config.current_player.hand.num_cards > 0:
             try:
-                config.current_player.discard()
+                config.current_player.discard(config)
                 num_discards += 1
 
             # ...unless they pass.
