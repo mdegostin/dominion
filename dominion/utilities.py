@@ -55,6 +55,7 @@ class Info():
             help_strs = response.split()
             if len(help_strs) != 2:
                 print("Not a valid help topic.")
+                return
             else:
                 topic = help_strs[1]
 
@@ -75,6 +76,7 @@ class Info():
                     info_funcs[topic](config=config)
                 except (AttributeError, KeyError):
                     print("Not a valid help topic.")
+                    return
 
     def info_buy(self, **kwargs):
         """Method prints a formatted description of the buy phase.

@@ -9,6 +9,7 @@ defines the overall high level game logic.
 
 import os
 import sys
+import time
 from random import shuffle
 from copy import copy
 
@@ -34,6 +35,8 @@ class Config():
         print("*" * 50)
         print(f"{'Welcome to Dominion!':^50}")
         print("*" * 50 + "\n")
+
+        time.sleep(1.5)
 
         # Ask if the user wants to view the rules
         while True:
@@ -151,10 +154,12 @@ class Game():
         
         """
 
-        os.system('cls' if os.name == 'nt' else 'clear')
-
         # Print the beginning game message.
         print("\nBeginning " + str(self))
+
+        time.sleep(1.5)
+
+        os.system('cls' if os.name == 'nt' else 'clear')
 
         # It is the initial turn.
         turn = 0
@@ -181,6 +186,7 @@ class Game():
                 try:
                     print(f"\n********** Turn #{turn} **********")
                     player.turn(self.config)
+                    time.sleep(1.5)
                     os.system('cls' if os.name == 'nt' else 'clear')
                 
                 # Here we catch unexpected errors while playing the game.
